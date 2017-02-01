@@ -1,0 +1,26 @@
+{
+  "name": "sapxrecastai",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "version": "0.0.1",
+  "dependencies": {
+    "angularjs-scroll-glue": "^2.1.0",
+    "body-parser": "~1.0.1",
+    "compression": "~1.0.1",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.1",
+    "ejs": "~1.0.0",
+    "express": "~4.1.0",
+    "express-session": "~1.0.2",
+    "http": "0.0.0",
+    "httpdispatcher": "^2.0.1",
+    "method-override": "~1.0.0",
+    "morgan": "~1.0.0",
+    "querystring": "^0.2.0",
+    "recastai": "^2.3.0",
+    "request": "^2.79.0",
+    "xml2js": "^0.4.17"
+  }
+}

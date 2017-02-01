@@ -1,0 +1,163 @@
+body {
+  background-color: #FFF;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+}
+
+.shadow-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.5s ease-in-out;
+}
+
+.shadow-1:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.shadow-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.shadow-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.shadow-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.shadow-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+/* Kevin's awful CSS */
+
+.chatPanel {
+  width: 500px;
+  max-width: 500px;
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: calc(50% - 250px);
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.6),0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12);
+  overflow: hidden;
+}
+
+.chatPanel .clearBtn {
+  background-color: #fec829;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.chatPanel>.messages {
+  height: calc(100% - 48px);
+  box-sizing: border-box;
+  padding: 10px 20px;
+  background: #ddd;
+  overflow: auto;
+}
+
+.chatPanel>.messages>md-icon {
+  width: 300px;
+  height: 300px;
+  line-height: 300px;
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 150px);
+  text-align: center;
+  font-size: 300px;
+  color: #d0d0d0;
+}
+
+.chatPanel .messageHolder {
+
+}
+
+.chatPanel .messageHolder.user {
+  text-align: right;
+}
+
+.chatPanel .messageHolder.bot {
+
+}
+
+.chatPanel .question {
+  max-width: calc(100%);
+  position: relative;
+  display: inline-block;
+  margin: 0 -9px -5px 0;
+}
+
+.chatPanel .question .selected {
+  box-shadow: 0px 0px 0px 2px #5cbae5;
+}
+
+.chatPanel .message {
+  max-width: calc(100% - 60px);
+  position: relative;
+  display: inline-block;
+  margin: 6px 0 0 0;
+  padding: 6px 9px;
+  border-radius: 5px;
+}
+
+.chatPanel .message.first:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  border: 5px solid transparent;
+}
+
+.chatPanel .messageHolder.user>.message:before {
+  border-top-color: #bbb;
+  right: -5px;
+}
+
+.chatPanel .messageHolder.bot>.message:before {
+  border-top-color: #fff;
+  left: -5px;
+}
+
+.chatPanel .messageHolder.user>.message {
+  border-top-right-radius: 0;
+  background-color: #bbb;
+}
+
+.chatPanel .message.user:before {
+
+}
+
+.chatPanel .messageHolder.bot>.message {
+  border-top-left-radius: 0;
+  background-color: #fff;
+}
+
+.chatPanel .date {
+  line-height: 15px;
+  padding: 6px 6px 0;
+  font-size: 11px;
+  color: rgba(0,0,0,.54);
+}
+
+.chatPanel .input {
+  height: 48px;
+  box-sizing: border-box;
+  border-top: 1px solid #999;
+  background: #fff;
+}
+
+.chatPanel .input>input {
+  width: calc(100% - 56px);
+  height: 47px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: 0;
+  font-size: 15px;
+  outline: none;
+}
+
+md-toolbar {
+  background: rgb(92,186,229) !important;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 0px 2px 2px rgba(0, 0, 0, 0.098), 0px 0px 5px 1px rgba(0, 0, 0, 0.084);
+}

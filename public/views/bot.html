@@ -1,0 +1,32 @@
+<md-content flex md-scroll-y style="background-color: #646869;">
+    <div class="chatPanel">
+        <div class="messages" scroll-glue>
+            <div ng-repeat="message in messages" ng-class="message.firstName === 'Bot' ? 'bot' : 'user'" class="messageHolder">
+                <div ng-if="!message.yesno" class="message" ng-class="$index === 0 || (messages[$index - 1].firstName !== message.firstName) ? 'first' : null">
+                    {{message.message}}
+                </div>
+                <div ng-if="message.yesno" class="question">
+                    <md-button class="md-raised md-primary" ng-click="replyYes()" clicked-disable ng-class="message.selectedValue === true ? 'selected' : null">Yes</md-button>
+                    <md-button class="md-raised md-warn" ng-click="replyNo()" clicked-disable ng-class="message.selectedValue === false ? 'selected' : null">No</md-button>
+                </div>
+                <!-- Date of message -->
+                <div ng-if="$index === messages.length - 1 || (messages[$index + 1].firstName !== message.firstName)" class="date">
+                    {{message.firstName === 'Bot' ? 'Bot' : message.firstName}}
+                    •
+                    {{message.when | date:'HH:mm'}}
+                </div>
+            </div>
+            <md-icon ng-if="messages.length === 0">layers</md-icon>
+        </div>
+        <md-button class="md-fab clearBtn" aria-label="Clear the chat" ng-click="clearChat()">
+            <md-icon>clear_all</md-icon>
+        </md-button>
+        <div class="input">
+            <input ng-model="newmessage" ng-enter="postMessage()" type="text" placeholder="Say something here" ng-keydown="handleKeydown($event)">
+            </md-input-container>
+            <md-button class="md-icon-button" aria-label="Send" ng-click="postMessage()">
+                <md-icon>send</md-icon>
+            </md-button>
+        </div>
+    </div>
+</md-content>
