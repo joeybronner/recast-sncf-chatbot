@@ -14,16 +14,16 @@ angular.module('mean').controller('BotController', ['$scope', '$http',
             if (msg !== '') {
 
                 $scope.messages.push({
-                    message:    msg,
-                    when:       now,
-                    firstName:  'You',
-                    avatar:     'person'
+                    message: msg,
+                    when: now,
+                    firstName: 'You',
+                    avatar: 'person'
                 });
                 $scope.newmessage = '';
 
                 var textToBox = {
                     text: msg,
-                    language: 'en',
+                    language: 'fr',
                     conversationToken: $scope.conversationToken
                 };
 
@@ -33,6 +33,9 @@ angular.module('mean').controller('BotController', ['$scope', '$http',
                     url: '/recast/bot',
                     data: textToBox
                 }).then(function successCallback(response) {
+
+                    // Write Recast response in console
+                    console.log(response.data);
 
                     var sIntention = response.data.action.slug;
                     var sReply = response.data.action.reply;
@@ -62,7 +65,6 @@ angular.module('mean').controller('BotController', ['$scope', '$http',
 
                     // Departure
                     if ($scope.destination !== '' && $scope.departure === '' && sIntention === 'departure') {
-                        $scope.writeBot(sReply);
                         if (bStepDone) {
                             $scope.departure = response.data.memory.traindeparture.raw;
                         }
@@ -77,7 +79,7 @@ angular.module('mean').controller('BotController', ['$scope', '$http',
                             url: '/sncf/nextdeparture/' + iIdDeparture + '/to/' + iIdDestination
                         }).then(function successCallback (response) {
 
-                            console.log(response);
+                            console.log(response.data);
 
                             var sDeparture = response.data.passages.$.gare;
                             var aTrains = response.data.passages.train;
@@ -89,13 +91,16 @@ angular.module('mean').controller('BotController', ['$scope', '$http',
                             } else {
                                 var sDestination = aTrains[0].term[0];
                                 var dFirstDeparture = aTrains[0].date[0]._;
+                                var dFirstDepartureNum = aTrains[0].num[0];
                                 var dSecondDeparture = aTrains[1].date[0]._;
+                                var dSecondDepartureNum = aTrains[1].num[0];
                                 var dThirdDeparture = aTrains[2].date[0]._;
+                                var dThirdDepartureNum = aTrains[2].num[0];
 
                                 $scope.writeBot('Les trois prochains trains au départ de ' + getStationById(sDeparture) + ', et à destination de ' + getStationById(sDestination) + ' sont :');
-                                $scope.writeBot('➝ ' + dFirstDeparture);
-                                $scope.writeBot('➝ ' + dSecondDeparture);
-                                $scope.writeBot('➝ ' + dThirdDeparture);
+                                $scope.writeBot('➝ Train n° ' + dFirstDepartureNum + ' - ' + dFirstDeparture);
+                                $scope.writeBot('➝ Train n° ' + dSecondDepartureNum + ' - ' + dSecondDeparture);
+                                $scope.writeBot('➝ Train n° ' + dThirdDepartureNum + ' - ' + dThirdDeparture);
                             }
 
                         }, function errorCallback (response) {

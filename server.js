@@ -2,12 +2,11 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 // Configure Express
 var express = require('./express');
-var recastai = require('recastai');
 var request = require('request');
 var xml2js = require('xml2js');
-var BOT_TOKEN = '87eea43186b37e02bd49bf7df83e0021';
 
-var client = new recastai.Client(BOT_TOKEN, 'en');
+var recastai = require('recastai');
+var client = new recastai.Client('87eea43186b37e02bd49bf7df83e0021', 'fr');
 
 // Express
 var app = express();
