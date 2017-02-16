@@ -2,18 +2,25 @@
   "name": "sapxrecastai",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "bower install && grunt"
   },
   "version": "0.0.1",
   "dependencies": {
+    "angular": "^1.6.2",
+    "angular-route": "^1.6.2",
     "angularjs-scroll-glue": "^2.1.0",
     "body-parser": "~1.0.1",
+    "bower": "^1.8.0",
     "compression": "~1.0.1",
     "connect-flash": "~0.1.1",
     "cookie-parser": "~1.0.1",
     "ejs": "~1.0.0",
     "express": "~4.1.0",
     "express-session": "~1.0.2",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
     "http": "0.0.0",
     "httpdispatcher": "^2.0.1",
     "method-override": "~1.0.0",

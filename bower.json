@@ -2,8 +2,6 @@
   "name": "drbot",
   "version": "1.0.0",
   "dependencies": {
-    "angular": "~1.5.x",
-    "angular-route": "~1.5.x",
     "angular-material": "latest",
     "material-design-lite": "latest",
     "Ionicons": "ionicons#~2.0.1",

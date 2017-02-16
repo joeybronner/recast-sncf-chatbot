@@ -5,7 +5,6 @@
 ## Installation
 
     npm install
-    bower install
     npm start
     http://localhost:3000
 
