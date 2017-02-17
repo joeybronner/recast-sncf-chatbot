@@ -13,7 +13,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 // Gloabl Settings
-global.useProxy = true;
+global.useProxy = false;
 global.proxySettings = { proxy: 'http://proxy:8080' };
 
 app.get('/sncf/nextdeparture/:iddeparture/to/:iddestionation', function (req, res) {
