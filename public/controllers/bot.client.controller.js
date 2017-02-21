@@ -38,7 +38,7 @@ angular.module('mean').controller('BotController', ['$scope', '$http',
                     console.log(response.data);
 
                     if (response.data.action === null) {
-                        var sDefaultReply = response.replies[0];
+                        var sDefaultReply = response.data.replies[0];
                         $scope.writeBot(sDefaultReply);
                     } else {
                         var sIntention = response.data.action.slug;
