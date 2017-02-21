@@ -44,7 +44,11 @@ body {
 }
 
 .chatPanel .clearBtn {
-  background-color: #fec829;
+  background: #8f0065; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #8f0065 14%, #ea0020 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #8f0065 14%,#ea0020 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #8f0065 14%,#ea0020 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8f0065', endColorstr='#ea0020',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   position: absolute;
   top: 0;
   left: 0;
@@ -58,7 +62,7 @@ body {
   overflow: auto;
 }
 
-.chatPanel>.messages>md-icon {
+.chatPanel>.messages>img {
   width: 300px;
   height: 300px;
   line-height: 300px;
