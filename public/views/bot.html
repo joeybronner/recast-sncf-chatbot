@@ -1,6 +1,7 @@
 <md-content flex md-scroll-y style="background-color: #646869;">
     <div class="chatPanel">
         <div class="messages" scroll-glue>
+            <img src="../img/sncf_transilien_logo_back.png" />
             <div ng-repeat="message in messages" ng-class="message.firstName === 'Bot' ? 'bot' : 'user'" class="messageHolder">
                 <div ng-if="!message.yesno" class="message" ng-class="$index === 0 || (messages[$index - 1].firstName !== message.firstName) ? 'first' : null">
                     {{message.message}}
@@ -17,7 +18,7 @@
                 </div>
             </div>
             <!-- <md-icon ng-if="messages.length === 0">layers</md-icon> -->
-            <img src="../img/sncf_transilien_logo_back.png" />
+
         </div>
         <md-button class="md-fab clearBtn" aria-label="Clear the chat" ng-click="clearChat()">
             <md-icon>clear_all</md-icon>
