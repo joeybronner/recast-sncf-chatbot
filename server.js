@@ -23,7 +23,7 @@ app.get('/sncf/nextdeparture/:iddeparture/to/:iddestionation', function (req, re
 
     var options = {
         proxy: global.useProxy ? 'http://proxy:8080' : '',
-        url: 'http://api.transilien.com/gare/' + iIdDeparture + '/depart/' + iIdDestination + '/',
+        url: 'https://api.transilien.com/gare/' + iIdDeparture + '/depart/' + iIdDestination + '/',
         auth: {
             user: 'tnhtn438',
             password: 'BEt5uprE'
